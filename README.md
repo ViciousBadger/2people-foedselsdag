@@ -13,7 +13,7 @@ Fra kommandoprompt:
 
 Jeg har ikke før arbejdet med hverken Node.js eller Angular, og brugte derfor det første stykke tid på at gennemgå Angular's [Tour of Heroes](https://angular.io/tutorial) tutorial. Frontend-delen gør brug af stort set alt hvad jeg lærte her.
 
-Efter denne tutorial tog arbejdet med selve opgaven omtrent 12 timer. Jeg startede med frontend-delen (med en mock database gennem `angular-in-memory-web-api` og satte først til sidst en simpel node.js backend op.
+Efter denne tutorial tog arbejdet med selve opgaven omtrent 12 timer. Jeg startede med frontend-delen (med en mock database gennem `angular-in-memory-web-api`) og satte først til sidst en simpel node.js REST API op.
 
 
 ## Oversigt
@@ -24,7 +24,7 @@ Henter data fra backend gennem HTTP requests og håndterer eventuelle fejl.
 
 ### Message service
 
-Barebones service der kan bruges til at vise beskeder til brugeren. Hver besked indeholder tekst, en beskedtype (fejl, succes osv) samt en valgfri Semantic UI ikon-klasse.
+Barebones service der kan bruges til at vise beskeder til brugeren. Hver besked indeholder tekst, en beskedtype (fejl, succes osv) samt et Semantic UI ikon.
 
 ### Foes-list komponent
 
@@ -32,7 +32,7 @@ Komponentet er ansvaligt for at vise listen over medarbejdere samt listens filtr
 
 ### Messages komponent
 
-Viser en simpel liste over beskeder fra Message servicen.
+Viser en simpel liste over beskeder fra Message servicen i toppen af brugerens browser.
 
 ### CSS Framework
 
@@ -45,6 +45,6 @@ Minimalistisk node.js/Express server struktureret som en REST API. Data vises so
 ## Kendte problemer / muligheder for vidreudvikling
 
 - Uge-filteret bruger i øjeblikket ikke ugenumre efter dansk standard. Filteret gør brug af day.js' [weekOfYear](https://day.js.org/docs/en/plugin/week-of-year) plugin, hvori uger starter på søndagen og udregnes anderledes - f.eks. udregnes denne uge - 31 - til at være uge 33. Kan løses ved brug af et bedre dato-library eller en hjemmelavet ugenummer-algoritme.
-- Message-servicen viser en fejl for hver API-anmodning, der mislykkedes - det vil være mere brugervenligt hvis identiske fejl blev samlet til en enkelt Message.
+- Message-servicen viser en fejl for hver API-anmodning, der mislykkedes - det vil være mere brugervenligt hvis identiske fejl blev samlet til en enkelt besked.
 - Projektet er ikke internationaliseret.
 - Projektet mangler en rigtig database, f.eks. MongoDb - en mock database i ren javascript er hverken vedvarende eller skalerbar.
