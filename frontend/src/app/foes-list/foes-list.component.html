@@ -1,0 +1,75 @@
+<div class="ui stackable divided grid">
+    <!-- Filters -->
+    <div class="five wide column">
+        <h4 class="header">
+            <i class="filter icon"></i>
+            Filtrér resultater
+        </h4>
+        <div class="ui divider"></div>
+        <div class="ui form">
+            <div class="field">
+                <label>Tidspunkt</label>
+                <sui-checkbox
+                    [(ngModel)]="filterThisWeek"
+                    (ngModelChange)="filterChanged()">
+                    Denne uge
+                </sui-checkbox>
+            </div>
+            <div class="field">
+                <sui-checkbox
+                    [(ngModel)]="filterThisMonth"
+                    (ngModelChange)="filterChanged()">
+                    Dette måned
+                </sui-checkbox>
+            </div>
+            <div class="field">
+                <label>Afdeling</label>
+                <sui-multi-select class="selection"
+                    placeholder="Alle afdelinger"
+                    [(ngModel)]="filterDepartments"
+                    (ngModelChange)="filterChanged()"
+                    [options]="departments"
+                    [isSearchable]="false"
+                    [isDisabled]="false"
+                    [hasLabels]="true"
+                    labelField="name"
+                    #departmentSelect>
+                    <sui-select-option *ngFor="let option of departmentSelect.filteredOptions" [value]="option"></sui-select-option>
+                </sui-multi-select>
+            </div>
+        </div>
+    </div>
+    <!-- Employee list -->
+    <div class="eleven wide column">
+        <sui-dimmer
+            [(isDimmed)]="loading"
+            [isClickable]="false"
+            transition=100>
+            <div class="ui text loader">
+                Henter resultater
+            </div>
+        </sui-dimmer>
+        <div *ngIf="employees.length == 0" class="ui secondary center aligned segment">
+            Ingen resultater.
+        </div>
+        <div *ngIf="employees.length > 0" class="ui divided items">
+            <div class="item" *ngFor="let employee of employees">
+                <div class="content">
+                    <div class="header">
+                        {{ employee.name }} {{ employee.surname }} 
+                    </div>
+                    <div class="metadata">
+                        <div class="ui small blue label">
+                            <i class="users icon"></i>
+                            {{ employee.departmentName }}
+                        </div>
+                        <div class="ui small purple label">
+                            <i class="birthday cake icon"></i>
+                            {{ employee.birthday | date:'d. MMM yyyy' }} 
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>

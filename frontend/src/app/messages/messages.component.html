@@ -1,0 +1,6 @@
+<div class="ui text container messages">
+    <sui-message *ngFor="let message of messageService.messages | slice:0:3" class="tiny floating {{message.type}}">
+        <i *ngIf="message.icon" class="{{ message.icon }} icon"></i>
+        {{ message.text }}
+    </sui-message>
+</div>
