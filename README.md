@@ -13,7 +13,7 @@ Fra kommandoprompt:
 
 Jeg har ikke før arbejdet med hverken Node.js eller Angular, og brugte derfor det første stykke tid på at gennemgå Angular's [Tour of Heroes](https://angular.io/tutorial) tutorial. Frontend-delen gør brug af stort set alt hvad jeg lærte her.
 
-Efter denne tutorial tog arbejdet med selve opgaven omtrent 12 timer. Jeg startede med frontend-delen (med en mock database gennem `angular-in-memory-web-api`) og satte først til sidst en simpel node.js REST API op.
+Efter denne tutorial tog arbejdet med selve opgaven omtrent 12 timer. Jeg startede med frontend-delen (med en mock database gennem `angular-in-memory-web-api`) og satte til sidst en simpel node.js REST API op.
 
 
 ## Oversigt
