@@ -18,6 +18,8 @@ Efter denne tutorial tog arbejdet med selve opgaven omtrent 12 timer. Jeg starte
 
 ## Oversigt
 
+![Diagram](./chart.png)
+
 ### API service
 
 Henter data fra backend gennem HTTP requests og håndterer eventuelle fejl.
