@@ -44,6 +44,8 @@ Projektet bruger en færdigkompileret udgave af Semantic UI med standardtema. In
 
 Minimalistisk node.js/Express server struktureret som en REST API. Data vises som JSON og er gemt i en mock database i filen `server.js`.
 
+Mock-databasen bruger manuelt genererede UUIDs til id-felterne.
+
 ## Kendte problemer / muligheder for vidreudvikling
 
 - Uge-filteret bruger i øjeblikket ikke ugenumre efter dansk standard. Filteret gør brug af day.js' [weekOfYear](https://day.js.org/docs/en/plugin/week-of-year) plugin, hvori uger starter på søndagen og udregnes anderledes - f.eks. udregnes denne uge - 31 - til at være uge 33. Kan løses ved brug af et bedre dato-library eller en hjemmelavet ugenummer-algoritme.
